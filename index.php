@@ -10,5 +10,6 @@ Routing::get('mainPage', 'DefaultController');
 Routing::get('profile', 'DefaultController');
 Routing::get('settings', 'DefaultController');
 Routing::get('register', 'DefaultController');
+Routing::post('login', 'SecurityController');
 
 Routing::run($path);
