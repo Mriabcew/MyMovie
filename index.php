@@ -11,5 +11,6 @@ Routing::get('profile', 'DefaultController');
 Routing::get('settings', 'DefaultController');
 Routing::get('register', 'DefaultController');
 Routing::post('login', 'SecurityController');
+Routing::post('addMovie', 'MovieController');
 
 Routing::run($path);
