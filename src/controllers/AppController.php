@@ -11,11 +11,11 @@ class AppContoller {
 
     protected function isPost():bool
     {
-        return $this->request === 'post';
+        return $this->request === 'POST';
     }
     protected function isGet():bool
     {
-        return $this->request === 'get';
+        return $this->request === 'GET';
     }
 
 

@@ -1,0 +1,40 @@
+body{
+    margin: 0;
+}
+section.movie-card{
+    display: flex;
+    margin: 1em 10em;
+    background: white;
+}
+
+#movieImg{
+    max-width: 25%;
+    justify-self: center;
+}
+
+div{
+    display: grid;
+}
+
+
+h2{
+    font-family: Inter;
+    justify-self: center;
+}
+
+div.social-section
+{
+    display: flex;
+    justify-content: space-between;
+    margin: 5em 2em 5em 5em;
+}
+
+p{
+    margin:0 1em;
+    justify-self: center;
+    font-family: "Georgia", Georgia, serif;
+}
+
+i{
+    justify-self: center;
+}
