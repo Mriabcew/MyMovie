@@ -92,5 +92,25 @@ class UserRepository extends Repository
         ]);
     }
 
+    public function updateUser(User $user)
+    {
+        $userName=$user->getName();
+        $userSurname = $user->getSurname();
+        $userGender = $user->getSex();
+        $userImg = $user->getImage();
+        $idUser = $user->getId();
+
+        $stmt = $this->database->connect()->prepare('
+            UPDATE users SET name = :name,surname=:surname,sex=:gender,image=:image WHERE id = :id
+        ');
+        $stmt->bindParam(':name', $userName, PDO::PARAM_STR);
+        $stmt->bindParam(':surname',$userSurname , PDO::PARAM_STR);
+        $stmt->bindParam(':gender', $userGender, PDO::PARAM_STR);
+        $stmt->bindParam(':image', $userImg, PDO::PARAM_STR);
+        $stmt->bindParam(':id', $idUser, PDO::PARAM_STR);
+
+        $stmt->execute();
+    }
+
 
 }

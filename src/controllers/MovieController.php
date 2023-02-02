@@ -32,7 +32,24 @@ class MovieController extends AppContoller
 
     }
 
-    #TODO dodawanie do bazy danych
+    public function top100()
+    {
+        $user = $this->userRepository->getUserByEmail($_COOKIE['user']);
+        $movies = $this->movieRepository->getMoviesTop100();
+        return $this->render('movies',['movies' => $movies,'user'=>$user]);
+
+
+    }
+
+    public function APIaddLibrary()
+    {
+        $user = $this->userRepository->getUserByEmail($_COOKIE['user']);
+        $movie = $this->movieRepository->getMovie($_POST['movieId']);
+        $this->movieRepository->addToLibrary($user->getId(),$movie->getId());
+        header("location:/library");
+    }
+
+
     public function addMovie()
     {
         $user = $this->userRepository->getUserByEmail($_COOKIE['user']);
@@ -42,7 +59,9 @@ class MovieController extends AppContoller
             move_uploaded_file($_FILES['file']['tmp_name'], dirname(__DIR__).self::UPLOAD_DIRECTORY.$_FILES['file']['name']);
 
            $movie = new Movie($_POST['title'],$_POST['description'],$_FILES['file']['name'],$_POST['date']);
-            return $this->render('movies',['messages' => $this->messages,'user'=>$user, 'movies' => $this->movieRepository->getMovies()]);
+
+           $this->movieRepository->addMovieToDB($movie);
+           return $this->render('movies',['messages' => $this->messages,'user'=>$user, 'movies' => $this->movieRepository->getMovies()]);
 
         }
 

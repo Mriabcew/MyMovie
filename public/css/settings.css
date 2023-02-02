@@ -18,3 +18,13 @@ div.informations
     align-content: center;
     margin: 2em 2em 2em 2em;
 }
+
+@media only screen and (max-device-width:420px){
+    #changePassword{
+        width: 50%;
+    }
+    form>input
+    {
+        width: 60%;
+    }
+}

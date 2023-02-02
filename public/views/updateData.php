@@ -15,7 +15,7 @@
         </header>
         <section class='my_profile'>
             <div class="user-info-container">
-                <form class="user-info" action="updateData" method="POST">
+                <form class="user-info" action="APIupdateData" method="POST" ENCTYPE="multipart/form-data">
                     <div class="messages">
                         <?php if(isset($messages)) {
                             foreach ($messages as $message){
@@ -25,10 +25,11 @@
                         ?>
                     </div>
                     <div class="input-header">Sex</div>
-                    <select name="sex" id="sex">
+                    <select name="sex" id="sex" >
                         <option disabled selected value> -- select an option -- </option>
-                        <option value="man">Man</option>
-                        <option value="woman">Woman</option>
+                        <option value="Man">Man</option>
+                        <option value="Woman">Woman</option>
+                        <option selected value="undefined">undefined</option>
                     </select>
                     <br> </br>
                     <div class="input-header">Name</div>
@@ -36,11 +37,11 @@
                     <div class="input-header">Surname</div>
                     <input name="surname" id="surname" type="text" placeholder="Surname">
                     <div class>
-                        <h1>Profil Image Upload
-                        </h1>
+                        <h6>Profil Image Upload
+                        </h6>
                         <div class="avatar-upload">
                             <div class="avatar-edit">
-                                <input type='file' id="imageUpload" accept=".png, .jpg, .jpeg" />
+                                <input type='file' name="file" id="imageUpload" accept=".png, .jpg, .jpeg" />
                                 <label for="imageUpload"></label>
                             </div>
                             <div class="avatar-preview">

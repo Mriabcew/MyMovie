@@ -38,3 +38,9 @@ p{
 i{
     justify-self: center;
 }
+
+@media only screen and (max-device-width:420px){
+    p{
+        font-size: 2em;
+    }
+}

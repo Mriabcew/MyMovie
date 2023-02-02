@@ -5,7 +5,7 @@
         <title>Profile</title>
     </head>
     <body>
-        <div class="container">
+        <div class="base-container">
             <?php
             include ('nav.php');
             ?>
