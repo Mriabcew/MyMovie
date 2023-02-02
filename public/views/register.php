@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <head>
     <link rel="stylesheet" type="text/css" href="public/css/style.css">
-    <link rel="stylesheet" type="text/css" href="public/css/register.css">
+    <link rel="stylesheet" type="text/css" href="public/css/profile.css">
     <title>MyMovie-Register</title>
     <script type="text/javascript" src="public/js/register.js" defer></script>
 </head>
@@ -28,7 +28,7 @@
         <input name="password" type="password" placeholder="password" required>
         <div class="input-header">Confirm password</div>
         <input name="confirm-password" type="password" placeholder="confirm password" required>
-        Accept<br><input type="checkbox" required>
+        <a>Accept</a><br><input type="checkbox" required>
         <a href="/public/views/TermsAndConditions.pdf" title="Terms and Conditions">Terms and Conditions</a>
         <button class="button-login button-font" type="submit">Register</button>
         <button onclick="location.href='/login'" type="button" class="button-signup button-font">Sign in</button>

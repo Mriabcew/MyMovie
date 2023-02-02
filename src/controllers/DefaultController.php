@@ -38,11 +38,6 @@ class DefaultController extends AppContoller {
         $this->render('top100',['movies'=>$this->movieRepository->getMoviesTop100()]);
     }
 
-    public function library()
-    {
-        $this->render('library',['movies'=>$this->movieRepository->getMoviesTop100()]);
-    }
-
     public function movie()
     {
         $this->render('movie');
@@ -52,8 +47,6 @@ class DefaultController extends AppContoller {
     {
         $this->render('updateData');
     }
-
-
 
     public function changePassword()
     {

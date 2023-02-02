@@ -29,7 +29,7 @@ class SecurityController extends AppContoller
             return $this->render('login');
         }
         $email = $_POST["email"];
-        $password = $_POST["password"];
+        $password = sha1($_POST["password"]);
 
         $user = $this->userRepository->getUserByEmail($email);
         if(!$user)
@@ -62,12 +62,11 @@ class SecurityController extends AppContoller
                 return $this->render('changePassword');
             }
 
-            #TODO SZYFROWANIE
-            $oldPassword = $_POST["OldPassword"];
-            $newPassword = $_POST["NewPassword"];
-            $repeatPassword = $_POST["RepeatNewPassword"];
+            $oldPassword = sha1($_POST["OldPassword"]);
+            $newPassword = sha1($_POST["NewPassword"]);
+            $repeatPassword = sha1($_POST["RepeatNewPassword"]);
 
-            $user = $this->userRepository->getUserByEmail('admin@admin');
+            $user = $this->userRepository->getUserByEmail($_COOKIE['user']);
 
             if($user->getPassword() !== $oldPassword) {
                 return $this->render('changePassword', ['messages' => ['Wrong old password!']]);
@@ -101,8 +100,7 @@ class SecurityController extends AppContoller
             return $this->render('register', ['messages' => ['Please provide proper password']]);
         }
 
-        #TODO SZYFROWANIE
-        $user = new User($email, ($password));
+        $user = new User($email, sha1($password));
         $this->userRepository->addUser($user);
 
 

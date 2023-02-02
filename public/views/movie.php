@@ -3,10 +3,11 @@
     <link rel="stylesheet" type="text/css" href="../public/css/style.css">
     <link rel="stylesheet" type="text/css" href="../public/css/moviePage.css">
     <script src="https://kit.fontawesome.com/c8b7e9466f.js" crossorigin="anonymous"></script>
+    <script src="./public/js/statistics.js" crossorigin="anonymous"></script>
     <title>Profile</title>
 </head>
 <body>
-<div class="container">
+<div class="base-container">
     <nav>
         <img src="../public/img/logo.svg">
         <ul>
@@ -43,10 +44,12 @@
                 <h2><?= $movie->getTitle()?></h2>
                 <p><?= $movie->getDescription()?></p>
                 <br> </br>
-                <p>Data premiery: <?=$movie->getReleseDate()?></p>
+                <p>Data premiery: <?=$movie->getRelaseDate()?></p>
                 <div class="social-section">
                     <i class="fas fa-heart"> <?= $movie->getLikes()?> </i>
-                    <button>Add to library</button>
+                    <form action="/APIaddLibrary" method="POST">
+                        <button value="<?= $movie->getID()?>" name="movieId" type="submit">Add to library</button>
+                    </form>
                     <i class="fas fa-minus-square"> <?= $movie->getDislikes()?>  </i>
                 </div>
             </div>

@@ -3,8 +3,6 @@
 require_once __DIR__.'/../../Database.php';
 
 class Repository {
-
-    #TODO SINGLETON
     protected $database;
 
     public function __construct()

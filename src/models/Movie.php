@@ -13,7 +13,7 @@ class Movie
     private $dislikes;
 
 
-    public function __construct($title, $description, $image, $relaseDate,$id=0, $likes=0, $dislikes=0)
+    public function __construct($title, $description, $image, $relaseDate,$id=null, $likes=0, $dislikes=0)
     {
 
         $this->title = $title;

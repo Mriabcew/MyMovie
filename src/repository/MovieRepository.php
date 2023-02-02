@@ -29,6 +29,20 @@ class MovieRepository extends Repository
         );
     }
 
+    public function addToLibrary(int $userID,int $movieID)
+    {
+
+        $stmt = $this->database->connect()->prepare('
+            INSERT INTO public.movies_users(id_user,id_movie)
+            VALUES (?,?)
+        ');
+
+        $stmt->execute([
+            $userID,
+            $movieID
+        ]);
+    }
+
 
     public function getMovies(): array
     {
@@ -68,11 +82,11 @@ class MovieRepository extends Repository
 
         foreach ($movies as $movie){
             $result[]= new Movie(
-                $movie['id'],
                 $movie['title'],
                 $movie['description'],
                 $movie['image'],
                 $movie['relase_date'],
+                $movie['id'],
                 $movie['likes'],
                 $movie['dislikes']
             );
@@ -120,6 +134,23 @@ class MovieRepository extends Repository
         }
         return $result;
 
+    }
+
+    public function addMovieToDB(Movie $movie)
+    {
+        $stmt = $this->database->connect()->prepare('
+            INSERT INTO public.movies (title,description,likes,dislikes,relase_date,image)
+            VALUES (?,?,?,?,?,?)
+        ');
+
+        $stmt->execute([
+            $movie->getTitle(),
+            $movie->getDescription(),
+            $movie->getLikes(),
+            $movie->getDislikes(),
+            $movie->getRelaseDate(),
+            $movie->getImage()
+        ]);
     }
 
     public function like(int $id) {

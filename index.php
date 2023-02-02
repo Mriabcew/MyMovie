@@ -17,13 +17,15 @@ Routing::get('profile','UserController');
 Routing::get('like','MovieController');
 Routing::get('dislike','MovieController');
 
-
+Routing::post('APIupdateData','UserController');
+Routing::post('APIaddLibrary','MovieController');
 Routing::post('login', 'SecurityController');
 Routing::post('addMovie', 'MovieController');
-Routing::post('top100','DefaultController');
+Routing::post('top100','MovieController');
 Routing::post('search','MovieController');
 Routing::post('changePassword','SecurityController');
 Routing::post('register','SecurityController');
+
 
 
 Routing::run($path);
