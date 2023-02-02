@@ -2,48 +2,17 @@
 
 <head>
     <link rel="stylesheet" type="text/css" href="public/css/style.css">
-    <link rel="stylesheet" type="text/css" href="public/css/projects.css">
-
-    <script src="https://kit.fontawesome.com/723297a893.js" crossorigin="anonymous"></script>
-    <title>PROJECTS</title>
+    <title>Add Movie</title>
 </head>
 
 <body>
 <div class="base-container">
-    <nav>
-        <img src="public/img/logo.svg">
-        <ul>
-            <li>
-                <i class="fas fa-project-diagram"></i>
-                <a href="#" class="button">projects</a>
-            </li>
-            <li>
-                <i class="fas fa-project-diagram"></i>
-                <a href="#" class="button">projects</a>
-            </li>
-            <li>
-                <i class="fas fa-project-diagram"></i>
-                <a href="#" class="button">projects</a>
-            </li>
-            <li>
-                <i class="fas fa-project-diagram"></i>
-                <a href="#" class="button">projects</a>
-            </li>
-        </ul>
-    </nav>
+    <?php
+    include ("nav.php");
+    ?>
     <main>
-        <header>
-            <div class="search-bar">
-                <form>
-                    <input placeholder="search project">
-                </form>
-            </div>
-            <div class="add-project">
-                <i class="fas fa-plus"></i> add project
-            </div>
-        </header>
         <section class="project-form">
-            <h1>UPLOAD</h1>
+            <h5>Dodawanie filmu</h5>
             <form action="addMovie" method="POST" ENCTYPE="multipart/form-data">
                 <div class="messages">
                     <?php
@@ -54,9 +23,9 @@
                     }
                     ?>
                 </div>
-                <input name="title" type="text" placeholder="title">
-                <textarea name="description" rows=10 placeholder="description"></textarea>
-
+                <input name="title" type="text" placeholder="Title"><br>
+                <textarea name="description" rows=10 placeholder="Description"></textarea><br>
+                <input name="date" type="text" placeholder="Relase Date"><br>
                 <input type="file" name="file"/><br/>
                 <button type="submit">send</button>
             </form>

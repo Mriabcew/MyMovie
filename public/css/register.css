@@ -1,0 +1,17 @@
+input{
+    font-family: Inter;
+    background-color: transparent;
+    border: none;
+    border-bottom: 1px solid gray;
+    padding: 1em;
+    margin: 1em;
+    width: 50%;
+}
+
+
+.cnns-comment-subscription label {
+    display: inline;
+    padding-left: 10px;
+    text-decoration: none;
+    color:black;
+}

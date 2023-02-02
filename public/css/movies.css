@@ -1,0 +1,54 @@
+section {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-gap: 2em;
+    padding: 2em;
+    overflow: auto;
+}
+
+.movies > div > img {
+    height: 50%;
+    width: 100%;
+    object-fit: contain;
+    border-radius: 1em 1em 0 0;
+}
+
+.movies > div > div {
+    font-family: Inter;
+    height: 50%;
+    margin: 1em;
+    color: black;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+}
+
+.movies > div {
+    font-family: Inter;
+    border: 1px solid gray;
+    border-radius: 1em 1em 0 0;
+    display: flex;
+    flex-direction: column;
+    justify-content: start;
+}
+
+section.project-form {
+    display: flex;
+    flex-direction: column;
+    justify-content: start;
+}
+
+.project-form > form {
+    display: flex;
+    flex-direction: column;
+}
+
+.social-section > i:hover {
+    cursor: pointer;
+}
+
+.movies>div>div>div{
+    font-family: Inter;
+    display: flex;
+    justify-content: space-between;
+}

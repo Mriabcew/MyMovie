@@ -1,11 +1,12 @@
 body {
     margin: 0;
+    font-family: Inter;
 }
 
 .container {
     width: 100vw;
     height: 100vh;
-    background: transparent linear-gradient(180deg, #2f61ce, #000000 65%  100%) 0% 0% no-repeat padding-box;
+    background: transparent linear-gradient(180deg, #2f61ce, #000000 65%) 0% 0% no-repeat padding-box;
 
     display: flex;
     flex-direction: row;
@@ -16,24 +17,49 @@ body {
 .logo {
     width: 50%;
     text-align: center;
+    font-family: "Georgia", Georgia, serif;
+    font-size:150%;
+    color:white;
 }
 
 .login-container {
     width: 50%;
 }
 
-form {
+form.login {
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
     width: 80%;
     height: 40vh;
-
     background: #FFFFFFE0 0% 0% no-repeat padding-box;
     box-shadow: 0px 6px 6px #00000029;
     border: 1px solid #707070;
-    border-radius: 33px;
+    border-radius: 50px;
+}
+
+form.register{
+    margin:2em;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 80%;
+    height: 60vh;
+    background: #FFFFFFE0 0% 0% no-repeat padding-box;
+    box-shadow: 0px 6px 6px #00000029;
+    border: 1px solid #707070;
+    border-radius: 50px;
+}
+
+input, textarea{
+    background-color: transparent;
+    border: none;
+    border-bottom: 1px solid gray;
+    padding: 1em;
+    margin: 1em;
+    width: 50%;
 }
 
 button {
@@ -48,14 +74,6 @@ button {
     line-height: 2.5em;
 }
 
-input {
-    background-color: transparent;
-    border: none;
-    border-bottom: 1px solid rgb(0, 0, 0);
-    padding: 1em;
-    margin: 1em;
-    width: 50%;
-}
 
 
 
@@ -81,3 +99,150 @@ input {
         margin: 2em;
     }
 }
+
+
+
+
+.base-container {
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    height: 100vh;
+}
+
+nav {
+    width: 15vw;
+    height: 100%;
+    background-color:black;
+    justify-content: center;
+}
+
+main {
+    width: 85vw;
+}
+
+nav>img {
+    width: 100%;
+    height: 10%;
+}
+
+a{
+    text-decoration: none;
+    display: inline-block;
+
+}
+
+li i {
+    font-size: 1.5em;
+}
+
+.button {
+    border: 1px solid #FFFFFF;
+    border-radius: 1em;
+    margin-left: 1em;
+    text-align: center;
+    letter-spacing: 0.72px;
+    color: #FFFFFF;
+    padding: 0.2rem;
+    width: 60%;
+}
+
+ul {
+    list-style-type: none;
+    font: normal normal normal 20px/27px Segoe UI;
+    letter-spacing: 0.72px;
+    color: #FFFFFF;
+    height: 87%;
+    width: calc(100% - 10%);
+    position: relative;
+    margin: 0 auto;
+    padding: 0;
+}
+
+h5{
+    font-size: 300%;
+}
+
+li {
+    text-align: center;
+    color: white;
+    margin-bottom: 1em;
+}
+
+li:last-child {
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+}
+
+main {
+    display: flex;
+    flex-direction: column;
+    height: 100vh;
+}
+
+header {
+    display: flex;
+    justify-content: space-between;
+    padding: 1em 2em;
+    border-bottom: 1px solid gray;
+}
+
+.add-movie {
+    font-family: Inter;
+    background: #000000 0% 0% no-repeat padding-box;
+    box-shadow: 0px 3px 6px #00000029;
+    border-radius: 1.5em;
+    color: white;
+    letter-spacing: 0.1em;
+    text-align: center;
+    width: 20%;
+    padding-block: inherit;
+}
+
+.add-project > i {
+    font-family: Inter;
+    padding: 1em 1em;
+}
+
+.search-bar {
+    width: 70%;
+}
+
+.search-bar>input{
+    background: #FFFFFF 0% 0% no-repeat padding-box;
+    box-shadow: 0px 3px 6px #00000029;
+    border: 1px solid #707070;
+    border-radius: 23px;
+    width: 100%;
+    text-align: center;
+    letter-spacing: 0.72px;
+    color: #A8A8A8;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+.no-valid {
+    border: 3px solid red;
+    border-radius: 1em;
+    box-shadow: 0 0 0.2em red;
+    outline: none;
+}
+
+[type="checkbox"]
+{
+    vertical-align: middle;
+}
+
+section.project-form{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+section.project-form>form{
+
+}
+
+
+
