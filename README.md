@@ -35,3 +35,6 @@ MyMovie is a web app that let's the user create own library of movies, see relas
 ![library](/images/library.PNG)
 ![profile](/images/profile.PNG)
 ![settings](/images/settings.PNG)
+
+## Database Visualization
+![db](/images/DB-diagram.PNG)
